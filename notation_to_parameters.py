@@ -45,6 +45,7 @@ def column_bound(column, slice_width, y, height):
 def notation_to_parameters(file):
     # 加載影像
     image = cv2.imread(file)
+    image = cv2.resize(image, (1600, max_slice_height))
     border_size = round(image.shape[0] / 2)
     
     image = cv2.copyMakeBorder(

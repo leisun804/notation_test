@@ -8,8 +8,9 @@ import os
 
 plot = False
 
+full_note_len = 2.4
 quick_atk = True
-atk_peak = 1.2
+atk_peak = 1.4
 release_len = 4000
 
 vibration_alpha = True
@@ -147,8 +148,8 @@ def note_construct(expr, des):
         
         
     pars2['overlapLen'] = 2000
-    note_len = pars['ori_sec']
-    note_len = 2
+    # note_len = pars['ori_sec']
+    note_len = full_note_len
     length = round(expr[6][-1] * note_len * fs) - round(expr[6][0] * note_len * fs)
     pars_len = round(pars['sampleRate'] * pars['ori_sec'])
     start = round(expr[6][0] * note_len * fs) + pars2['attackLen'] - pars2['overlapLen']
